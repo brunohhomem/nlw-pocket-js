@@ -8,7 +8,8 @@ import { GetSummary } from './http/get-summary'
 export function App() {
   const { data } = useQuery({
     queryKey: ['summary'],
-    queryFn: GetSummary
+    queryFn: GetSummary,
+    staleTime: 1000 * 60 //60 seconds of cached data
   })
 
   return (
