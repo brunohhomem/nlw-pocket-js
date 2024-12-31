@@ -3,12 +3,12 @@ import { CreateGoal } from './components/create-goal'
 import { Summary } from './components/summary'
 import { EmptyGoals } from './components/empty-goals'
 import { useQuery } from '@tanstack/react-query'
-import { GetSummary } from './http/get-summary'
+import { getSummary } from './http/get-summary'
 
 export function App() {
   const { data } = useQuery({
     queryKey: ['summary'],
-    queryFn: GetSummary,
+    queryFn: getSummary,
     staleTime: 1000 * 60 //60 seconds of cached data
   })
 

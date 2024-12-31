@@ -5,7 +5,7 @@ import InOrbitIcon from './ui/in-orbit-icon'
 import { Progress, ProgressIndicator } from './ui/progress-bar'
 import { Separator } from './ui/separator'
 import { useQuery } from '@tanstack/react-query'
-import { GetSummary } from '../http/get-summary'
+import { getSummary } from '../http/get-summary'
 import dayjs from 'dayjs'
 import ptBR from 'dayjs/locale/pt-BR'
 import { PendingGoals } from './pending-goals'
@@ -15,7 +15,7 @@ dayjs.locale(ptBR)
 export function Summary() {
   const { data } = useQuery({
     queryKey: ['summary'],
-    queryFn: GetSummary,
+    queryFn: getSummary,
     staleTime: 1000 * 60 //60 seconds of cached data
   })
 
